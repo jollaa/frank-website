@@ -3,445 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frank — We're not going to tell you this saves the planet.</title>
-<meta name="description" content="Frank makes certified compostable dog waste bags, and tells you the truth about what that does and doesn't mean. Launching in the UK, late 2026.">
+<title>Frank — Something good is coming.</title>
+<meta name="description" content="Frank makes certified compostable dog waste bags. Our site's having a quick nap — say hello at hello@frankpets.co.uk.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Brand palette — navy #1C242D, olive #7C8254 (matches packaging). */
     --navy: #1C242D;
     --navy-deep: #141A20;
-    --navy-mid: #243039;
-    --sage: #7C8254;              /* brand olive — logo, accents, buttons */
-    --sage-bright: #B7BD93;       /* lighter olive — headings, emphasis */
-    --sage-text: #C7CBB0;         /* readable body text on navy */
+    --sage: #7C8254;
+    --sage-bright: #B7BD93;
+    --sage-text: #C7CBB0;
     --sage-dim: rgba(199,203,176,0.55);
-    --cream: #F5F3EE;
-    --charcoal: #1A1A1A;
-    --amber: #D4A25A;
-    --strike-red: #C97064;
     --line: rgba(183,189,147,0.16);
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) {
-    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
   }
-
   body {
     font-family: 'Inter', sans-serif;
-    background: var(--navy);
+    background:
+      radial-gradient(1200px 600px at 50% -10%, var(--navy) 0%, var(--navy-deep) 70%),
+      var(--navy);
     color: var(--sage-text);
-    overflow-x: hidden;
-  }
-
-  a { color: inherit; }
-  .anchor { position: relative; top: -78px; }
-
-  /* ============ NAV ============ */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 48px;
-    background: rgba(28,36,45,0.9);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-logo { font-weight: 900; font-size: 40px; letter-spacing: -0.02em; color: var(--sage-bright); }
-  .nav-right { display: flex; align-items: center; gap: 22px; }
-  .nav-link { font-size: 13px; font-weight: 500; text-decoration: none; opacity: 0.85; }
-  .nav-link:hover { opacity: 1; }
-  .nav-cta {
-    font-size: 12.5px; font-weight: 600; padding: 9px 18px;
-    border: 1px solid var(--sage); border-radius: 999px; text-decoration: none;
-    transition: background 0.2s ease, color 0.2s ease;
-  }
-  .nav-cta:hover { background: var(--sage); color: var(--navy); }
-  @media (max-width: 600px) { .nav-link { display: none; } }
-
-  /* ============ HERO ============ */
-  .hero {
     min-height: 100svh;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 110px 48px 70px;
-    position: relative;
+    text-align: center;
+    padding: 40px 24px;
+    overflow-x: hidden;
   }
-  .hero-kicker {
-    font-family: 'Inter', sans-serif;
+  a { color: inherit; }
+  .wrap { max-width: 620px; animation: rise 0.9s ease both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+  .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(64px, 16vw, 128px);
+    letter-spacing: -0.02em;
+    color: var(--sage-bright);
+    line-height: 1;
+  }
+  .kicker {
     font-size: 12px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--sage-dim);
-    margin-bottom: 28px;
+    margin: 34px 0 18px;
   }
-  .hero h1 {
-    font-size: clamp(40px, 7vw, 92px);
-    font-weight: 800;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-    max-width: 1000px;
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(26px, 5vw, 40px);
+    letter-spacing: -0.01em;
     color: var(--sage-bright);
+    line-height: 1.15;
   }
-  .hero h1 em {
-    font-family: 'Inter', sans-serif;
+  p.sub {
+    margin-top: 20px;
+    font-size: clamp(16px, 2.4vw, 19px);
     font-style: italic;
-    font-weight: 400;
-    font-size: 0.6em;
-    color: var(--sage-text);
+    line-height: 1.6;
+    opacity: 0.9;
   }
-  .hero-sub {
-    margin-top: 34px;
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(18px, 2.4vw, 24px);
-    font-style: italic;
-    max-width: 640px;
-    line-height: 1.55;
-    opacity: 0.88;
+  .rule {
+    width: 46px; height: 3px; background: var(--sage);
+    border-radius: 3px; margin: 40px auto 34px;
   }
-  .hero-actions { margin-top: 42px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-  .btn-primary {
-    display: inline-block; background: var(--sage); color: var(--navy);
-    padding: 16px 34px; border-radius: 999px; font-size: 15px; font-weight: 700;
-    text-decoration: none; transition: background 0.2s ease, transform 0.2s ease;
+  a.mail {
+    display: inline-block;
+    background: var(--sage);
+    color: var(--navy);
+    padding: 15px 32px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
   }
-  .btn-primary:hover { background: var(--sage-bright); transform: translateY(-1px); }
-  .btn-ghost {
-    display: inline-block; padding: 16px 28px; border-radius: 999px;
-    border: 1px solid var(--line); font-size: 15px; font-weight: 500;
-    text-decoration: none; transition: border-color 0.2s ease;
+  a.mail:hover { background: var(--sage-bright); transform: translateY(-1px); }
+  .foot {
+    margin-top: 46px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--sage-dim);
   }
-  .btn-ghost:hover { border-color: var(--sage); }
-  .hero-launch {
-    margin-top: 22px; font-family: 'Inter', sans-serif;
-    font-size: 12px; letter-spacing: 0.08em; color: var(--amber); opacity: 0.9;
-  }
-  .hero-scroll {
-    position: absolute; bottom: 34px; left: 48px;
-    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.4;
-  }
-  @media (max-width: 860px) { .hero-scroll { display: none; } }
-
-  /* ============ CONFESSION SECTIONS ============ */
-  .confession {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 100px 48px;
-    border-top: 1px solid var(--line);
-    position: relative;
-  }
-  .confession.dark { background: var(--navy-deep); }
-  .confession.mid { background: var(--navy-mid); }
-  .confession-number {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px; color: var(--amber);
-    letter-spacing: 0.1em; margin-bottom: 24px;
-  }
-  .confession h2 {
-    font-size: clamp(32px, 5vw, 64px);
-    font-weight: 800; letter-spacing: -0.02em;
-    line-height: 1.08; max-width: 920px; margin-bottom: 32px;
-    color: var(--sage-bright);
-  }
-  .confession-body {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(18px, 2vw, 22px);
-    line-height: 1.7; max-width: 680px; opacity: 0.9;
-  }
-  .confession-body + .confession-body { margin-top: 20px; }
-  .confession-body strong { font-weight: 600; color: var(--sage-bright); }
-  .confession-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 64px; align-items: center; max-width: 1200px; }
-  .confession-layout.reverse { grid-template-columns: 1fr 1.6fr; }
-  .confession-layout.balance { grid-template-columns: 1.1fr 1fr; }
-  .confession-layout.reverse .confession-text { order: 2; }
-  @media (max-width: 860px) {
-    .confession-layout, .confession-layout.reverse, .confession-layout.balance { grid-template-columns: 1fr; gap: 32px; }
-    .confession-layout.reverse .confession-text { order: unset; }
-  }
-
-  /* ============ SAY / DON'T SAY TABLE ============ */
-  .comparison { background: var(--cream); color: var(--charcoal); padding: 120px 48px; }
-  .comparison-head { text-align: center; margin-bottom: 72px; }
-  .comparison-eyebrow {
-    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--navy); opacity: 0.55; font-weight: 600; margin-bottom: 18px;
-  }
-  .comparison-head h2 {
-    font-size: clamp(30px, 4.5vw, 50px); font-weight: 800; letter-spacing: -0.02em;
-    color: var(--navy); max-width: 700px; margin: 0 auto; line-height: 1.15;
-  }
-  .comparison-grid { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
-  .comparison-row {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
-    padding: 28px 0; border-bottom: 1px solid rgba(28,36,45,0.12); align-items: center;
-  }
-  .comparison-row:first-child { border-top: 1px solid rgba(28,36,45,0.12); }
-  .comparison-dont {
-    font-size: 17px; text-decoration: line-through;
-    text-decoration-color: var(--strike-red); text-decoration-thickness: 1.5px; opacity: 0.5;
-  }
-  .comparison-do { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 500; color: var(--navy); }
-  .comparison-labels { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 880px; margin: 0 auto 20px; }
-  .comparison-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; opacity: 0.4; }
-
-  /* ============ PRODUCT NOTE ============ */
-  .product-note { background: var(--navy); padding: 120px 48px; text-align: center; }
-  .product-note-inner { max-width: 640px; margin: 0 auto; }
-  .product-note-eyebrow {
-    font-family: 'Inter', sans-serif; font-size: 12px;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage-dim); margin-bottom: 28px;
-  }
-  .product-note h3 {
-    font-size: clamp(24px, 3.5vw, 36px); font-weight: 700; letter-spacing: -0.01em;
-    line-height: 1.3; margin-bottom: 28px; color: var(--sage-bright);
-  }
-  .product-note-body { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.7; opacity: 0.85; }
-  .cert-row { display: flex; justify-content: center; gap: 10px; margin-top: 40px; flex-wrap: wrap; }
-  .cert-pill {
-    font-size: 11px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
-    border: 1px solid var(--sage-dim); letter-spacing: 0.03em;
-  }
-  .product-note .btn-primary { margin-top: 44px; }
-
-  /* ============ CONTACT ============ */
-  .contact {
-    padding: 130px 48px; border-top: 1px solid var(--line);
-    background: var(--navy-mid); text-align: center;
-  }
-  .contact-inner { max-width: 620px; margin: 0 auto; }
-  .contact-eyebrow {
-    font-family: 'Inter', sans-serif; font-size: 12px;
-    letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage-dim); margin-bottom: 24px;
-  }
-  .contact h2 {
-    font-size: clamp(30px, 4.6vw, 52px); font-weight: 800; letter-spacing: -0.02em;
-    line-height: 1.1; margin-bottom: 22px; color: var(--sage-bright);
-  }
-  .contact p {
-    font-family: 'Inter', sans-serif; font-size: 19px; font-style: italic;
-    line-height: 1.6; opacity: 0.9; margin-bottom: 40px;
-  }
-  .contact-email {
-    display: inline-block; font-family: 'Inter', sans-serif;
-    font-size: clamp(18px, 3vw, 26px); font-weight: 500; color: var(--sage-bright);
-    text-decoration: none; padding-bottom: 4px; border-bottom: 2px solid var(--sage);
-    transition: color 0.2s ease, border-color 0.2s ease;
-  }
-  .contact-email:hover { color: var(--amber); border-color: var(--amber); }
-  .contact-note { margin-top: 34px; font-size: 14px; font-style: normal; font-family: 'Inter', sans-serif; opacity: 0.6; }
-
-  /* ============ CLOSE ============ */
-  .close { background: var(--navy-deep); padding: 150px 48px; text-align: center; border-top: 1px solid var(--line); }
-  .close h2 {
-    font-size: clamp(36px, 6vw, 68px); font-weight: 900; letter-spacing: -0.02em;
-    line-height: 1.05; max-width: 880px; margin: 0 auto 44px; color: var(--sage-bright);
-  }
-  .close h2 em { font-family: 'Inter', sans-serif; font-style: italic; font-weight: 400; font-size: 0.6em; color: var(--amber); }
-  .close-sub {
-    font-family: 'Inter', sans-serif; font-size: 18px; font-style: italic;
-    opacity: 0.7; max-width: 480px; margin: 0 auto 48px; line-height: 1.6;
-  }
-  .close-cta {
-    display: inline-block; background: var(--sage); color: var(--navy);
-    padding: 18px 40px; border-radius: 999px; font-size: 16px; font-weight: 700;
-    text-decoration: none; transition: background 0.2s ease, transform 0.2s ease;
-  }
-  .close-cta:hover { background: var(--sage-bright); transform: translateY(-1px); }
-
-  /* ============ FOOTER ============ */
-  footer {
-    background: var(--navy-deep); padding: 54px 48px 40px; border-top: 1px solid var(--line);
-    display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 28px;
-  }
-  .footer-logo { font-weight: 900; font-size: 22px; letter-spacing: -0.02em; color: var(--sage-bright); }
-  .footer-tag { margin-top: 8px; font-size: 13px; opacity: 0.55; max-width: 260px; line-height: 1.5; }
-  .footer-legal { font-size: 12px; line-height: 1.75; opacity: 0.5; text-align: right; max-width: 360px; }
-  .footer-legal a { color: inherit; }
-  @media (max-width: 700px) { footer { flex-direction: column; } .footer-legal { text-align: left; } }
-
-  /* ============ RESPONSIVE + REVEAL ============ */
-  @media (max-width: 860px) {
-    /* nav flows in-page on mobile (sticky, not fixed) so it can't hide behind the browser/address bar */
-    nav { position: sticky; padding: 16px 22px; }
-    .hero, .confession, .comparison, .product-note, .contact, .close, footer { padding-left: 22px; padding-right: 22px; }
-    /* nav now takes its own space, so sections need only small top padding and stack from the top */
-    .hero { min-height: auto; justify-content: flex-start; padding-top: 28px; padding-bottom: 64px; }
-    .confession { min-height: auto; justify-content: flex-start; padding-top: 72px; padding-bottom: 56px; }
-    .comparison-row, .comparison-labels { grid-template-columns: 1fr; gap: 6px; }
-    .comparison-row { padding: 22px 0; }
-  }
-  .reveal {
-    opacity: 0; transform: translateY(24px);
-    transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
-  }
-  .reveal.in-view { opacity: 1; transform: translateY(0); }
-  /* Brand fonts — Montserrat for wordmark + headings, Inter for body (matches the carton) */
-  h1, h2, h3, .nav-logo, .footer-logo { font-family: 'Montserrat', sans-serif; }
 </style>
 </head>
 <body>
-
-<nav>
-  <div class="nav-logo">FRANK.</div>
-  <div class="nav-right">
-    <a href="#contact" class="nav-link">Contact</a>
-    <a href="#contact" class="nav-cta">Be first to know</a>
-  </div>
-</nav>
-
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <p class="hero-kicker">Compostable dog waste bags</p>
-  <h1>We make dog waste bags.<br><em>We're not going to tell you they save the planet.</em></h1>
-  <p class="hero-sub">Frank is a compostable dog waste bag brand built on one idea: say what's true, certify what you claim, and stop pretending a poo bag is an environmental achievement.</p>
-  <div class="hero-actions">
-    <a href="#contact" class="btn-primary">Be first to know</a>
-    <a href="#contact" class="btn-ghost">Get in touch</a>
-  </div>
-  <p class="hero-launch">▸ Launching late 2026</p>
-  <p class="hero-scroll">↓ Scroll down. We've got a few things to admit first.</p>
-</section>
-
-<!-- ============ CONFESSION 01 ============ -->
-<section class="confession dark">
-  <div class="confession-layout">
-    <div class="confession-text">
-      <p class="confession-number reveal">01</p>
-      <h2 class="reveal">Compostable doesn't mean what the packaging usually implies.</h2>
-      <p class="confession-body reveal">Most "compostable" bags need an <strong>industrial composting facility</strong> — specific heat, specific microbes, specific conditions your garden compost bin will never reach. Ours are certified to EN13432, which is a real, tested, independently verified standard. It is also not a promise that your council collects this material, because most don't, yet.</p>
-      <p class="confession-body reveal">We could have left that bit out. Most bags do.</p>
-    </div>
-    <div></div>
-  </div>
-</section>
-
-<!-- ============ CONFESSION 02 ============ -->
-<section class="confession mid">
-  <div class="confession-layout reverse">
-    <div class="confession-text">
-      <p class="confession-number reveal">02</p>
-      <h2 class="reveal">The bag's home-compostable. What's inside it isn't.</h2>
-      <p class="confession-body reveal">Our bag is certified to OK compost HOME as well as industrial. But dog waste carries pathogens that should never go near a compost heap — so whatever the bag can do, <strong>what's inside it belongs in the general waste bin.</strong> Every time. And real UK garden heaps rarely hit the temperatures the certificate assumes anyway — certified, not magic.</p>
-    </div>
-    <div></div>
-  </div>
-</section>
-
-<!-- ============ CONFESSION 03 ============ -->
-<section class="confession dark">
-  <div class="confession-layout balance">
-    <div class="confession-text">
-      <p class="confession-number reveal">03</p>
-      <h2 class="reveal">One better bag doesn't undo everything else.</h2>
-      <p class="confession-body reveal">We're not going to tell you that switching bags offsets a flight, or that you're "saving the planet one walk at a time." You're using a slightly better material, made a bit more thoughtfully, from a company that would rather tell you the truth than sell you a feeling.</p>
-      <p class="confession-body reveal">That's smaller than most marketing promises. It also happens to be accurate.</p>
-    </div>
-    <div></div>
-  </div>
-</section>
-
-<!-- ============ SAY / DON'T SAY ============ -->
-<section class="comparison">
-  <div class="comparison-head">
-    <p class="comparison-eyebrow reveal">What the category usually says</p>
-    <h2 class="reveal">We read a lot of dog waste bag packaging<br>researching this. Here's the pattern.</h2>
-  </div>
-  <div class="comparison-labels">
-    <div class="comparison-label">What gets printed</div>
-    <div class="comparison-label">What we print instead</div>
-  </div>
-  <div class="comparison-grid">
-    <div class="comparison-row reveal">
-      <div class="comparison-dont">"100% compostable — kind to the planet"</div>
-      <div class="comparison-do">Certified compostable to EN 13432 — industrial and home. Dog waste still goes to general waste.</div>
-    </div>
-    <div class="comparison-row reveal">
-      <div class="comparison-dont">Vague leaf logo, no standard named</div>
-      <div class="comparison-do">The actual certification number, the actual issuing body.</div>
-    </div>
-    <div class="comparison-row reveal">
-      <div class="comparison-dont">"Eco-friendly" / "sustainable" / "green"</div>
-      <div class="comparison-do">A description of the material, and what it can and can't do.</div>
-    </div>
-    <div class="comparison-row reveal">
-      <div class="comparison-dont">"Join us in saving the planet"</div>
-      <div class="comparison-do">Thanks for giving a sh*t. (Literally and figuratively.)</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PRODUCT NOTE ============ -->
-<section class="product-note">
-  <div class="product-note-inner">
-    <p class="product-note-eyebrow reveal">What's actually in the box, briefly</p>
-    <h3 class="reveal">PBAT and cornstarch. 20 microns. Tie handles. 120 bags, 8 rolls of 15.</h3>
-    <p class="product-note-body reveal">Navy, because black bags and dog mess is a combination nobody needed. Built to hold, not to split. Certified because we checked, not because it sounded right.</p>
-    <!-- NOTE: confirm exact certifications & licence numbers before publishing (see packaging CONTEXT.md open questions). -->
-    <div class="cert-row reveal">
-      <span class="cert-pill">EN 13432 certified</span>
-      <span class="cert-pill">OK compost HOME</span>
-      <span class="cert-pill">OK compost INDUSTRIAL</span>
-    </div>
-    <a href="#contact" class="btn-primary reveal">Be first to know</a>
-  </div>
-</section>
-
-<!-- ============ CLOSE ============ -->
-<section class="close" id="close">
-  <h2 class="reveal">Honest isn't a marketing angle here.<br><em>It's just less exhausting than the alternative.</em></h2>
-  <p class="close-sub reveal">Frank is arriving soon. No vague leaf logos with nothing behind them — real certifications, with real numbers. And the honest bit most brands skip: dog waste still belongs in the general waste bin. Just a well-made bag, and the truth printed right on the box.</p>
-  <a href="#contact" class="close-cta reveal">Be first to know</a>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<span class="anchor" id="contact"></span>
-<section class="contact">
-  <div class="contact-inner">
-    <p class="contact-eyebrow reveal">Talk to a human</p>
-    <h2 class="reveal">Be first to know. Or just say hello.</h2>
-    <p class="reveal">There's a real person behind Frank. Want to hear the moment we launch — or just ask us something? Drop us a line. We read every one.</p>
-    <a href="mailto:hello@frankpets.co.uk" class="contact-email reveal">hello@frankpets.co.uk</a>
-    <p class="contact-note reveal">We aim to reply within two working days.</p>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer>
-  <div>
-    <div class="footer-logo">FRANK.</div>
-    <p class="footer-tag">Honest dog waste bags. Certified compostable, plainly labelled.</p>
-  </div>
-  <div class="footer-legal">
-    Frank is a brand of Smart Products Limited<br>
-    Registered in England &amp; Wales, company no. 07236340<br>
-    Registered office: Bretton House, Park Lane, Pulford, Chester, CH4 9EP<br>
-    <br>
-    &copy; 2026 Smart Products Limited &middot; <a href="privacy.html">Privacy Policy</a>
-  </div>
-</footer>
-
-<script>
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
-</script>
-
+  <main class="wrap">
+    <div class="logo">FRANK.</div>
+    <div class="kicker">Compostable dog waste bags</div>
+    <h1>Something good is coming.</h1>
+    <p class="sub">Our site's having a quick nap while we get things right. Honest bags, honest words — worth the wait.</p>
+    <div class="rule"></div>
+    <a class="mail" href="mailto:hello@frankpets.co.uk">Say hello →</a>
+    <div class="foot">hello@frankpets.co.uk &nbsp;·&nbsp; UK, late 2026</div>
+  </main>
 </body>
 </html>
