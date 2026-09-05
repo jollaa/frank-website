@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frank — Something good is coming.</title>
-<meta name="description" content="Frank makes certified compostable dog waste bags. Our site's having a quick nap — say hello at hello@frankpets.co.uk.">
+<title>Frank &mdash; Back very soon.</title>
+<meta name="description" content="Frank makes certified compostable dog waste bags. Our site's having a quick nap &mdash; say hello at hello@frankpets.co.uk.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -30,14 +30,27 @@
     color: var(--sage-text);
     min-height: 100svh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     text-align: center;
-    padding: 40px 24px;
+    padding: 44px 24px;
     overflow-x: hidden;
   }
   a { color: inherit; }
-  .wrap { max-width: 620px; animation: rise 0.9s ease both; }
+  .wrap { max-width: 620px; margin: auto; animation: rise 0.9s ease both; }
+
+  .pup {
+    margin: 0 auto 26px;
+    line-height: 0;
+  }
+  .pup img {
+    width: auto;
+    height: clamp(210px, 42vh, 340px);
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 22px 30px rgba(0,0,0,0.45));
+  }
   @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
   .logo {
@@ -57,11 +70,22 @@
   }
   h1 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: clamp(26px, 5vw, 40px);
-    letter-spacing: -0.01em;
+    font-weight: 800;
+    font-size: clamp(32px, 6.4vw, 56px);
+    letter-spacing: -0.02em;
     color: var(--sage-bright);
-    line-height: 1.15;
+    line-height: 1.08;
+  }
+  h1 em {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.44em;
+    color: var(--sage-text);
+    margin-top: 18px;
+    line-height: 1.4;
+    opacity: 0.92;
   }
   p.sub {
     margin-top: 20px;
@@ -96,13 +120,13 @@
 </head>
 <body>
   <main class="wrap">
+    <div class="pup"><img src="dog.png" alt="A Frank pup holding a flower"></div>
     <div class="logo">FRANK.</div>
     <div class="kicker">Compostable dog waste bags</div>
-    <h1>Something good is coming.</h1>
-    <p class="sub">Our site's having a quick nap while we get things right. Honest bags, honest words — worth the wait.</p>
+    <h1>Back very soon.<em>Even the dog's making an effort. We're nearly there too.</em></h1>
     <div class="rule"></div>
-    <a class="mail" href="mailto:hello@frankpets.co.uk">Say hello →</a>
-    <div class="foot">hello@frankpets.co.uk &nbsp;·&nbsp; UK, late 2026</div>
+    <a class="mail" href="mailto:hello@frankpets.co.uk">Say hello</a>
+    <div class="foot">hello@frankpets.co.uk <br> Launching in the UK, late 2026</div>
   </main>
 </body>
 </html>
