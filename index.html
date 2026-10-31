@@ -238,6 +238,23 @@
     transition: color 0.2s ease, border-color 0.2s ease;
   }
   .contact-email:hover { color: var(--amber); border-color: var(--amber); }
+  .signup { margin: 44px auto 0; max-width: 520px; }
+  .signup-row { display: flex; gap: 10px; }
+  .signup input[type="email"] {
+    flex: 1; min-width: 0; padding: 16px 20px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--navy); color: var(--cream);
+    font-family: 'Inter', sans-serif; font-size: 16px; outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .signup input[type="email"]::placeholder { color: var(--sage-text); opacity: 0.6; }
+  .signup input[type="email"]:focus { border-color: var(--sage-bright); }
+  .signup button { border: 0; cursor: pointer; font-family: inherit; white-space: nowrap; }
+  .signup-fine { margin-top: 14px; font-family: 'Inter', sans-serif; font-size: 13px; font-style: normal; opacity: 0.6; margin-bottom: 0; }
+  .signup-fine a { color: inherit; }
+  .signup-thanks { display: none; margin: 44px auto 0; max-width: 520px; padding: 22px 26px; border: 1px solid var(--sage); border-radius: 16px; font-family: 'Inter', sans-serif; font-size: 17px; font-style: normal; }
+  .signup-thanks strong { color: var(--sage-bright); }
+  .or-email { margin-top: 40px; font-family: 'Inter', sans-serif; font-size: 14px; font-style: normal; opacity: 0.6; margin-bottom: 12px; }
+  @media (max-width: 560px) { .signup-row { flex-direction: column; } .signup button { width: 100%; } }
   .contact-note { margin-top: 34px; font-size: 14px; font-style: normal; font-family: 'Inter', sans-serif; opacity: 0.6; }
 
   /* ============ CLOSE ============ */
@@ -409,7 +426,20 @@
   <div class="contact-inner">
     <p class="contact-eyebrow reveal">Talk to a human</p>
     <h2 class="reveal">Be first to know. Or just say hello.</h2>
-    <p class="reveal">There's a real person behind Frank. Want to hear the moment we launch — or just ask us something? Drop us a line. We read every one.</p>
+    <p class="reveal">Leave your email and we'll send you one message when the bags are on sale. One. Not a newsletter, not a "community" — one email, then we leave you alone.</p>
+
+    <form class="signup reveal" name="launch-list" method="POST" action="/?joined=1#contact" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="launch-list">
+      <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
+      <div class="signup-row">
+        <input type="email" name="email" placeholder="your@email.co.uk" required autocomplete="email" aria-label="Your email address">
+        <button type="submit" class="btn-primary">Tell me when it launches</button>
+      </div>
+      <p class="signup-fine">Stored securely by our hosting provider, used for that one email, deleted on request. <a href="privacy.html">Privacy</a>.</p>
+    </form>
+    <div class="signup-thanks reveal" id="signup-thanks" role="status"><strong>You're on the list.</strong> We'll email you once, when it's real. Until then — nothing.</div>
+
+    <p class="or-email reveal">Or just ask us something — there's a real person here.</p>
     <a href="mailto:hello@frankpets.co.uk" class="contact-email reveal">hello@frankpets.co.uk</a>
     <p class="contact-note reveal">We aim to reply within two working days.</p>
   </div>
@@ -431,6 +461,10 @@
 </footer>
 
 <script>
+  if (new URLSearchParams(location.search).get('joined') === '1') {
+    var f = document.querySelector('form.signup'), t = document.getElementById('signup-thanks');
+    if (f && t) { f.style.display = 'none'; t.style.display = 'block'; }
+  }
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
